@@ -1,0 +1,45 @@
+:root {
+  --gray: #333333;
+  --light-purple: #60588E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0 20px;
+}
+
+header {
+  padding: 40px 2%;
+  font: normal bold 1.5rem/25px 'Inconsolata';
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+}
+
+main {
+  display: flex;
+}
+
+footer {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  font: normal 600 0.875rem/17px 'Montserrat';
+  color: var(--gray);
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--gray);
+}
