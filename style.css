@@ -1,5 +1,6 @@
 :root {
   --gray: #333333;
+  --light-gray: #4f4f4f;
   --light-purple: #60588E;
 }
 
@@ -10,18 +11,17 @@
 }
 
 html, body {
-  min-height: 100%;
   height: 100%;
+  min-height: 100%;
 }
 
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  padding: 0 20px;
 }
 
 header {
-  padding: 40px 2%;
+  padding: 40px calc(20px + 2%);
   font: normal bold 1.5rem/25px 'Inconsolata';
   letter-spacing: -0.08em;
   text-transform: uppercase;
@@ -29,6 +29,66 @@ header {
 
 main {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+main > div {
+  padding: 30px;
+}
+
+.error-container, .image-container {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.error-container {
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 900px;
+}
+
+
+.image-container {
+  max-width: 600px;
+  min-width: 480px;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+.error-container .error-container__text h1 {
+  font: normal bold clamp(3rem, 4vw, 4rem)/95px 'Space Mono';
+  letter-spacing: -0.035em;
+  color: var(--gray);
+}
+
+.error-container .error-container__text p {
+  margin-top: 36px;
+  font: normal normal clamp(1.125rem, 1.8vw, 1.5rem)/36px 'Space Mono';
+  letter-spacing: -0.035em;
+  color: var(--light-gray);
+}
+
+.error-container .btn {
+  margin-top: 64px;
+  padding: 24px 43px;
+  border: none;
+  background-color: var(--gray);
+  font: normal bold 0.875rem/21px 'Space Mono';
+  color: white;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 1s;
+}
+
+.error-container .btn:hover, .error-container .btn:active {
+  background-color: var(--light-purple);
+  transition: 0.5;
 }
 
 footer {
@@ -42,4 +102,10 @@ footer {
 footer a {
   text-decoration: none;
   color: var(--gray);
+}
+
+@media screen and (max-width: 480px) {
+  .image-container {
+      min-width: 290px;
+  }
 }
